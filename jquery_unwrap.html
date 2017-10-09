@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="./jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p").unwrap();
+    });
+    $("#btn1").click(function(){
+        $("h1").wrap("<div ></div>");
+    });
+    $("#btn2").click(function(){
+        $("h1   ").unwrap();
+    });
+});
+</script>
+<style>
+div{background-color: orange;}
+article{background-color: yellowgreen;}
+</style>
+</head>
+<body>
+<div>
+<p>Hello Guys!</p>
+</div>
+<article>
+<p>This is javatpoint.com</p>
+</article>
+<h1> Something should happen to me here</h1>
+<button>Click here to remove the parent element of each p element</button>
+<button id="btn1">Wrap a div element around each h1 element</button>
+<button id="btn2">Unwrap</button>
+</body>
+</html>
+

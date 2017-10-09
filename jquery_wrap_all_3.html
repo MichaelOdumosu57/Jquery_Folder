@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="./jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        $("p").wrapAll("<div></div>");
+    });
+    $("#btn2").click(function(){
+        $("p").unwrap();
+    });
+});
+</script>
+<style>
+div{background-color: pink; margin:5px;padding:2px; border:2px solid #696; width:600px; position: relative;}
+</style>
+</head>
+<body>
+<p>Hello Guys!</p>
+<p>This is javatpoint.com</p>
+<button id="btn1">Wrap a div element around all p element</button>
+<button id="btn2">Unwrap</button>
+</body>
+</html>
