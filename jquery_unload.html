@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="./jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("p").mouseover(function () {
+      // $(this).css("font-size","50px");
+      alert("did i go away");
+      $("p").unload(function() {
+        
+      });
+    });
+});
+</script>
+</head>
+<body>
+<p style = "font-size: 40px;">When you click <a>this link</a>, or close the window,
+ unload event will be triggered.</p>
+</body>
+</html>
