@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="utf-8">
+      <title>jQuery UI effect Example</title>
+      <!--<link href="./ui-lightness_jquery-ui.css" rel="stylesheet">-->
+      <!--<link rel="stylesheet" href="./smoothness_jquery-ui.css">-->
+      <script src="./jquery-1.10.2.js"></script>
+      <script src="./jquery-ui.js"></script>
+      <!-- CSS -->
+      <style>
+         div   {
+            height: 50px;
+            width: 100px;
+            background: #7fffd4;
+         }
+      </style>
+      <script>
+        
+        var x = 0;
+        var action=  [" shake", "bounce", "explode","drop","fade","fold","highlight","puff", "scale", "pulsate", "size","slide"]
+        var telle;
+         $(document).ready(function() {
+            telle = $("button").click( function addbutton(){
+              $("div:last").after("<div >Click here to<br/><b>" + action[x+1] + " Me!</b></div>");
+              
+            var $x = $("div:last");
+              $("body:not(:button)").click(function() {
+                
+                if (action[x] === "scale" ||  action[x] === "size"  ) {
+                  $x.toggle(action[x])
+                  console.log("hit the toggle")
+                  
+                }
+              
+                
+                else {
+               $x.effect( action[x],
+                  {display : " show"},
+                  function() {
+               $( this ).css( {"background": "#ff4040" , "display" : "show" });
+                  });
+      
+              }
+                });
+            
+            
+            });
+            
+            $("h1").click(function () {
+              x += 1;
+              console.log(action[x])
+              if(x == 11){
+                x = 0
+              }
+              addbutton();
+              
+            });
+
+            $('div:first').click(function() {
+               $( "div:first" ).effect( "shake", {
+                  times: 10,
+                  distance: 150
+               }, 3000, function() {
+               $( this ).css( "background", "#ff4040" );
+            });
+         });
+            $('div:nth-of-type(2)').click(function() {
+               $( "div:nth-of-type(2)" ).effect( "bounce", {
+                  times: 10,
+                  distance: 150
+               }, 3000, function() {
+               $( this ).css( "background", "#ff4040" );
+            });
+         });
+      });
+      
+</script>
+</head>
+<body>
+<button> click here to add a div</button>
+<h1 style ="margin-left:500px;"> click here to change the effect  </h1>
+<div class="box-1">Click here to<br/><b>Shake Me!</b></div>
+<!--<div id="box-2">Click here to<br/><b>Bounce Me!</b></div>-->
+</body>
+</html>
+
