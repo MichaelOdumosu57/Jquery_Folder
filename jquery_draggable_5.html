@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+   <head>
+      <link href="./ui-lightness_jquery-ui.css" rel="stylesheet">
+      <script src="./jquery-1.10.2.js"></script>
+      <script src="./jquery-ui.js"></script>
+   </head>
+   <body>
+      <div id="div7" style="border:solid 1px;background-color:pink;">
+         <span>Dragging is disabled. You can't move me!</span><br><br>
+      </div>
+      <div id="div8" style="border:solid 1px;background-color:yellow;">
+         <span>Dragging is enabled. Move Me!</span><br><br>
+      </div>
+      <script>
+         $("#div7 span").draggable ();
+         $("#div7 span").draggable ('disable');
+         $("#div8 span").draggable ();
+         console.log($("#div8 span").draggable ('widget'));
+      </script>
+   </body>
+</html>
+

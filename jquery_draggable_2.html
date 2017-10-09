@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+   <link href ="./ui-lightness_jquery-ui.css" rel="stylesheet">
+   <script src ="./jquery-1.10.2.js"></script>
+   <script src ="./jquery-ui.js"></script>
+</head>
+<body>
+   <div id="divX" style="border:solid 1px;background:lightpink; height:30px;">
+      <span>Click on me to see cursor type.</span>
+   </div>
+   <script>
+      /* First make the item draggable */
+      $("#divX span").draggable(true);
+      
+      $("#divX span").click( function(  ){
+          var cursor = $( "#divX span" ).draggable( "option", "cursor" );
+          var cursorAt = $( "#divX span" ).draggable( "option", "cursorAt" );
+          alert("Cursor type - " + cursor + ", cursorAt - " + cursorAt);
+     });
+   </script>
+</body>
+</html>

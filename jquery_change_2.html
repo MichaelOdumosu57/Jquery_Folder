@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>change demo</title>
+  <style>
+  div {
+    color: red;
+    font-size: 40px;
+  }
+  option {
+    font-size: 40px;
+  }
+  </style>
+  <script src="./jquery-1.10.2.js"></script>
+</head>
+<body>
+ <select name="Employees" multiple="multiple" style = "height:420px; width:350px">
+  <option>Uthappa</option>
+  <option selected="selected">Kattapa</option>
+  <option>Veerappa</option>
+  <option selected="selected">Bahubali</option>
+  <option>Bhallal Dev</option>
+  <option>Awantika</option>
+</select>
+<div></div>
+ <script>
+$( "select" )
+  .change(function () {
+    var str = "";
+    $( "select option:selected" ).each(function() {
+      str += $( this ).text() + " ";
+    });
+    $( "div" ).text( str );
+  })
+  .change();
+</script>
+ </body>
+</html>
