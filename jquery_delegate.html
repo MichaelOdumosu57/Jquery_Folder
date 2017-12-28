@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>delegate demo</title>
+  <style>
+  h1 {
+    background: yellow;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+  }
+  h1.over {
+    background: #ccc;
+  }
+  span {
+    color: red;
+    font-size:40px;
+  }
+  </style>
+  <script src="./jquery-1.10.2.js"></script>
+</head>
+<body>
+  <div>
+<h1>This is a single paragraph. Click me for next.</h1>
+ <span> what goes here</span>
+ <br>
+ <span> or is it this one??</span>
+  </div>
+<script>
+$( "div" ).delegate( "span ", "click", function() {
+  $(this ).after( "<h1>Click me for another paragraph.</h1>" );
+});
+</script>
+</body>
+</html>
